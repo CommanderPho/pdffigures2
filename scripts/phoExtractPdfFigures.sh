@@ -39,6 +39,7 @@ function extract_pdf_figures() {
 # }
 
 function extract_pdf_figures_and_data() {
+	mkdir './outputs'
 	pdf_path="$1"
 	sbt_command="sbt 'runMain org.allenai.pdffigures2.FigureExtractorBatchCli \"$pdf_path\" -s outputs/stat_file.json -m outputs/figure_ -d outputs/fig_data_ --dpi 600'"
 	eval $sbt_command
@@ -48,7 +49,8 @@ function extract_pdf_figures_and_data() {
 
 
 # # extract_pdf_figures_and_data "/path/to/pdf_directory/example.pdf"
-extract_pdf_figures_and_data "/media/MAX/cloud/Dropbox_Personal/Active/Kamran Diba Lab/Personal Lab Meeting Summaries/2022 Yu Davachi - Repetition accelerates neural markers of memory consolidation/2022 Yu Davachi - Repetition accelerates neural markers of memory consolidation.pdf"
+# extract_pdf_figures_and_data "/media/MAX/cloud/Dropbox_Personal/Active/Kamran Diba Lab/Personal Lab Meeting Summaries/2022 Yu Davachi - Repetition accelerates neural markers of memory consolidation/2022 Yu Davachi - Repetition accelerates neural markers of memory consolidation.pdf"
+extract_pdf_figures_and_data '/home/halechr/Zotero/storage/C3Y8AKEB/2023.12.27.573490v1.full.pdf'
 
 
 # # sbt 'runMain org.allenai.pdffigures2.FigureExtractorVisualizationCli "/media/MAX/cloud/Dropbox_Personal/Active/Kamran Diba Lab/Personal Lab Meeting Summaries/2022 Yu Davachi - Repetition accelerates neural markers of memory consolidation/2022 Yu Davachi - Repetition accelerates neural markers of memory consolidation.pdf"'
