@@ -11,6 +11,7 @@
 
 
 function install_sbt_if_needed() {
+	curl -s "https://get.sdkman.io" | bash
 	# Install SDKMan and Scala's sbt:
 	cd ~/repos/
 	sdk install java $(sdk list java | grep -o "\b8\.[0-9]*\.[0-9]*\-tem" | head -1)
